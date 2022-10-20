@@ -1,3 +1,4 @@
+import "./Key.css";
 interface KeyElements {
   text: string;
   action: () => void;
@@ -6,7 +7,10 @@ interface KeyElements {
 
 const Key = ({ text, action, className = "" }: KeyElements): JSX.Element => {
   return (
-    <button onClick={action} className={className}>
+    <button
+      onClick={action}
+      className={`key${className ? ` ${className}` : ""}`}
+    >
       {text}
     </button>
   );
